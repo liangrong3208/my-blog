@@ -3,8 +3,8 @@ title: Liangrong 的角落
 email: your-email@example.com
 description: >-
   记录思考，分享成长
-baseurl: "/my-blog"
-url: ""
+baseurl: ""
+url: "https://blog.liangrong.top"
 
 # Build settings
 theme: minima
