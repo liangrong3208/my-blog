@@ -16,4 +16,4 @@ title: 首页
   {% endfor %}
 </ul>
 
-[查看所有文章](/archive/)
+[查看所有文章](/my-blog/archive/)
