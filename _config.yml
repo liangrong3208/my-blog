@@ -1,15 +1,13 @@
-# Site settings
 title: Liangrong 的角落
-description: >-
-  记录思考，分享成长
-
-# Build settings
+description: 记录思考，分享成长
 theme: minima
+
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
-# Exclude from processing  
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - README.md
+author:
+  name: Liangrong
+
+url: "https://liangrong3208.github.io"
+baseurl: "/my-blog"
