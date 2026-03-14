@@ -10,6 +10,14 @@ plugins:
 paginate: 10
 paginate_path: "/page:num/"
 
+# Minima theme pagination support
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
 author:
   name: Liangrong
 
