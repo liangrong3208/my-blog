@@ -1,25 +1,39 @@
 title: Liangrong 的角落
 description: 记录思考，分享成长
-theme: minima
+theme: minimal-mistakes
 
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-paginate
+  - jekyll-sitemap
 
+# Pagination
 paginate: 10
 paginate_path: "/page:num/"
 
-# Minima theme pagination support
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
+# Minimal Mistakes theme configuration
+minimal_mistakes:
+  skin: dark
+  author: Liangrong
+  breadcrumbs: true
+  comments:
+    provider: false
+  social:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/liangrong3208"
 
+# Author settings
 author:
   name: Liangrong
+  avatar: "/assets/images/avatar.jpg"
+  bio: "记录思考，分享成长"
+  location: "China"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/liangrong3208"
 
 url: "https://blog.liangrong.top"
 baseurl: ""
