@@ -8,8 +8,8 @@ layout: default
   <table class="post-table" style="width: 100%; border-collapse: collapse;">
     {% for post in paginator.posts %}
       <tr>
-        <td class="post-meta" style="width: 120px; padding: 8px 0; color: #666; white-space: nowrap;">{{ post.date | date: "%Y-%m-%d" }}</td>
-        <td style="padding: 8px 0;"><a class="post-link" href="{{ post.url | relative_url }}" style="text-decoration: none; color: #0366d6;">{{ post.title }}</a></td>
+        <td class="post-meta" style="width: 120px; padding: 6px 0; color: #666; white-space: nowrap; font-size: 14px;">{{ post.date | date: "%Y-%m-%d" }}</td>
+        <td style="padding: 6px 0;"><a class="post-link" href="{{ post.url | relative_url }}" style="text-decoration: none; color: #0366d6; font-size: 15px;">{{ post.title }}</a></td>
       </tr>
     {% endfor %}
   </table>
@@ -18,15 +18,15 @@ layout: default
   {% if paginator.total_pages > 1 %}
   <div class="pagination" style="margin-top: 30px; text-align: center;">
     {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path | relative_url }}" class="previous" style="margin-right: 10px; text-decoration: none;">&larr; 上一页</a>
+      <a href="{{ paginator.previous_page_path | relative_url }}" class="previous" style="margin-right: 10px; text-decoration: none; font-size: 14px;">&larr; 上一页</a>
     {% endif %}
     
-    <span class="page-number" style="margin: 0 10px; color: #666;">
+    <span class="page-number" style="margin: 0 10px; color: #666; font-size: 14px;">
       第 {{ paginator.page }} 页 / 共 {{ paginator.total_pages }} 页
     </span>
     
     {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path | relative_url }}" class="next" style="margin-left: 10px; text-decoration: none;">下一页 &rarr;</a>
+      <a href="{{ paginator.next_page_path | relative_url }}" class="next" style="margin-left: 10px; text-decoration: none; font-size: 14px;">下一页 &rarr;</a>
     {% endif %}
   </div>
   {% endif %}
