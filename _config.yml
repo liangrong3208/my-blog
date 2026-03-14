@@ -9,5 +9,5 @@ plugins:
 author:
   name: Liangrong
 
-url: "https://liangrong3208.github.io"
-baseurl: "/my-blog"
+url: "https://blog.liangrong.top"
+baseurl: ""
