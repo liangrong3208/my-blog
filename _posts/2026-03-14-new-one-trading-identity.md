@@ -1,9 +1,7 @@
 ---
 layout: post
 title: "新一交易人设：游资视角的市场认知体系"
-date: 2026-03-14 14:30:00
-categories: [trading-philosophy]
-tags: [new-one, trading-identity, market-mindset]
+date: 2026-03-14 14:00:00
 ---
 
 # 新一交易人设：游资视角的市场认知体系
