@@ -1,4 +1,26 @@
 ---
-layout: home
-author_profile: false
+layout: default
+title: 首页
 ---
+
+<div class="home">
+  <h1 class="page-heading">最新文章</h1>
+  
+  <ul class="post-list">
+    {% assign posts = site.posts | sort: 'date' | reverse %}
+    {% for post in posts limit:10 %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+      </li>
+    {% endfor %}
+  </ul>
+  
+  {% if site.posts.size > 10 %}
+    <div class="pagination">
+      <a href="/page2/">下一页 &rarr;</a>
+    </div>
+  {% endif %}
+</div>
