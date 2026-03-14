@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "股票持仓监控报告"
+title: "我的私人空间随拍"
 date: 2026-03-14 12:26:00
-categories: [stock]
-tags: [report, analysis]
+categories: [personal]
+tags: [photo, space]
 ---
 
-![股票报告](/images/stock-report-2026-03-14.jpg)
+![我的私人空间随拍](/images/stock-report-2026-03-14.jpg)
 
-今日持仓监控报告，详细数据见上图。
+我的私人空间随拍，记录生活点滴。
