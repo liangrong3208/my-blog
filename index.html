@@ -1,0 +1,63 @@
+---
+layout: default
+title: 首页
+pagination:
+  enabled: true
+---
+
+<div class="home">
+  <h1 class="page-heading">最新文章</h1>
+
+  <ul class="post-list">
+    {% for post in paginator.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
+        <h2>
+          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h2>
+        {% if post.excerpt %}
+          <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% if paginator.total_pages > 1 %}
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | relative_url }}" class="previous">上一页</a>
+    {% endif %}
+    
+    <span class="page-number">第 {{ paginator.page }} 页 / 共 {{ paginator.total_pages }} 页</span>
+    
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | relative_url }}" class="next">下一页</a>
+    {% endif %}
+  </div>
+  {% endif %}
+</div>
+
+<style>
+.pagination {
+  text-align: center;
+  margin: 2em 0;
+}
+.pagination a, .pagination span {
+  display: inline-block;
+  padding: 0.5em 1em;
+  margin: 0 0.25em;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+.pagination a:hover {
+  background-color: #f5f5f5;
+}
+.post-list li {
+  margin-bottom: 1.5em;
+}
+.post-meta {
+  color: #666;
+  font-size: 0.9em;
+}
+</style>
