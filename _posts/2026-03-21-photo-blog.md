@@ -6,4 +6,4 @@ categories: [随笔]
 tags: [图片]
 ---
 
-![分享图片](/my-blog/assets/images/blog-20260321-0935.jpg)
+![分享图片](/assets/images/blog-20260321-0935.jpg)
