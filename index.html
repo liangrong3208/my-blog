@@ -5,6 +5,10 @@ layout: default
 <div class="home">
   <h1 class="page-heading">最新文章</h1>
   
+  <div style="margin-bottom: 20px;">
+    <a href="{{ '/search/' | relative_url }}" style="display: inline-block; padding: 8px 16px; background: #0366d6; color: white; text-decoration: none; border-radius: 4px; font-size: 14px;">🔍 搜索文章</a>
+  </div>
+  
   <table class="post-table" style="width: 100%; border-collapse: collapse;">
     {% for post in paginator.posts %}
       <tr>
