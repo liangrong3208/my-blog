@@ -8,8 +8,8 @@ tags: [电动车, 第一次, 记录]
 
 今天第一次开电动车，必须记录一下！
 
-<video controls width="100%">
-  <source src="/assets/videos/first_electric_car_20260402.mp4" type="video/mp4">
+<video controls width="100%" style="max-width: 100%; border-radius: 8px;">
+  <source src="{{ '/assets/videos/first_electric_car_20260402.mp4' | relative_url }}" type="video/mp4">
   您的浏览器不支持视频标签。
 </video>
 
