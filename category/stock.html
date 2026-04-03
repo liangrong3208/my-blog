@@ -10,14 +10,16 @@ permalink: /category/stock/
     <a href="{{ '/' | relative_url }}" style="display: inline-block; padding: 8px 16px; background: #6c757d; color: white; text-decoration: none; border-radius: 4px; font-size: 14px;">← 返回全部</a>
   </div>
   
+  {% assign stock_posts = site.posts | where_exp: "post", "post.categories contains '股票' or post.categories contains 'stock' or post.categories contains 'trading' or post.categories contains 'trading-report' or post.categories contains 'trading-strategy' or post.categories contains 'trading-philosophy'" %}
+  
+  <p style="color: #666; font-size: 14px; margin-bottom: 15px;">共 {{ stock_posts.size }} 篇文章</p>
+  
   <table class="post-table" style="width: 100%; border-collapse: collapse;">
-    {% for post in site.posts %}
-      {% if post.categories contains '股票' or post.categories contains 'stock' or post.categories contains 'trading' or post.categories contains 'trading-report' or post.categories contains 'trading-strategy' or post.categories contains 'trading-philosophy' %}
+    {% for post in stock_posts %}
       <tr>
         <td class="post-meta" style="width: 120px; padding: 6px 0; color: #666; white-space: nowrap; font-size: 14px;">{{ post.date | date: "%Y-%m-%d" }}</td>
         <td style="padding: 6px 0;"><a class="post-link" href="{{ post.url | relative_url }}" style="text-decoration: none; color: #0366d6; font-size: 15px;">{{ post.title }}</a></td>
       </tr>
-      {% endif %}
     {% endfor %}
   </table>
 </div>
