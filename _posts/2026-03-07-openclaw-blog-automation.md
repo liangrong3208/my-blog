@@ -2,7 +2,7 @@
 layout: post
 title: "我重新配置好博客，可以用 OpenClaw 推送了"
 date: 2026-03-07 22:00:00 +0800
-categories: 随笔
+categories: [openclaw]
 ---
 
 今天完成了一件小事，但对我来说挺有意义的——**我的博客现在可以通过 OpenClaw 自动推送更新了**。
