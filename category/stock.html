@@ -10,7 +10,14 @@ permalink: /category/stock/
     <a href="{{ '/' | relative_url }}" style="display: inline-block; padding: 8px 16px; background: #6c757d; color: white; text-decoration: none; border-radius: 4px; font-size: 14px;">← 返回全部</a>
   </div>
   
-  {% assign stock_posts = site.posts | where_exp: "post", "post.categories contains '股票' or post.categories contains 'stock' or post.categories contains 'trading' or post.categories contains 'trading-report' or post.categories contains 'trading-strategy' or post.categories contains 'trading-philosophy'" %}
+  {% assign stock_posts = '' | split: '' %}
+  {% for post in site.posts %}
+    {% if post.categories contains '股票' or post.categories contains 'stock' %}
+      {% assign stock_posts = stock_posts | push: post %}
+    {% elsif post.categories contains 'trading' or post.categories contains 'trading-report' or post.categories contains 'trading-strategy' or post.categories contains 'trading-philosophy' %}
+      {% assign stock_posts = stock_posts | push: post %}
+    {% endif %}
+  {% endfor %}
   
   <p style="color: #666; font-size: 14px; margin-bottom: 15px;">共 {{ stock_posts.size }} 篇文章</p>
   

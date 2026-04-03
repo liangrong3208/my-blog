@@ -10,7 +10,14 @@ permalink: /category/openclaw/
     <a href="{{ '/' | relative_url }}" style="display: inline-block; padding: 8px 16px; background: #6c757d; color: white; text-decoration: none; border-radius: 4px; font-size: 14px;">← 返回全部</a>
   </div>
   
-  {% assign openclaw_posts = site.posts | where_exp: "post", "post.categories contains 'openclaw' or post.categories contains 'OpenClaw' or post.title contains 'OpenClaw' or post.title contains 'openclaw'" %}
+  {% assign openclaw_posts = '' | split: '' %}
+  {% for post in site.posts %}
+    {% if post.categories contains 'openclaw' or post.categories contains 'OpenClaw' %}
+      {% assign openclaw_posts = openclaw_posts | push: post %}
+    {% elsif post.title contains 'OpenClaw' or post.title contains 'openclaw' %}
+      {% assign openclaw_posts = openclaw_posts | push: post %}
+    {% endif %}
+  {% endfor %}
   
   <p style="color: #666; font-size: 14px; margin-bottom: 15px;">共 {{ openclaw_posts.size }} 篇文章</p>
   

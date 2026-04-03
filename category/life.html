@@ -10,7 +10,12 @@ permalink: /category/life/
     <a href="{{ '/' | relative_url }}" style="display: inline-block; padding: 8px 16px; background: #6c757d; color: white; text-decoration: none; border-radius: 4px; font-size: 14px;">← 返回全部</a>
   </div>
   
-  {% assign life_posts = site.posts | where_exp: "post", "post.categories contains '生活' or post.categories contains '随笔' or post.categories contains '日常'" %}
+  {% assign life_posts = '' | split: '' %}
+  {% for post in site.posts %}
+    {% if post.categories contains '生活' or post.categories contains '随笔' or post.categories contains '日常' %}
+      {% assign life_posts = life_posts | push: post %}
+    {% endif %}
+  {% endfor %}
   
   <p style="color: #666; font-size: 14px; margin-bottom: 15px;">共 {{ life_posts.size }} 篇文章</p>
   
