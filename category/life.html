@@ -14,12 +14,59 @@ permalink: /category/life/
   
   <p style="color: #666; font-size: 14px; margin-bottom: 15px;">共 {{ life_posts.size }} 篇文章</p>
   
-  <table class="post-table" style="width: 100%; border-collapse: collapse;">
+  <table class="post-table" id="life-posts-table" style="width: 100%; border-collapse: collapse;">
     {% for post in life_posts %}
-      <tr>
+      <tr class="post-row" data-page="{{ forloop.index0 | divided_by: 10 | plus: 1 }}">
         <td class="post-meta" style="width: 120px; padding: 6px 0; color: #666; white-space: nowrap; font-size: 14px;">{{ post.date | date: "%Y-%m-%d" }}</td>
         <td style="padding: 6px 0;"><a class="post-link" href="{{ post.url | relative_url }}" style="text-decoration: none; color: #0366d6; font-size: 15px;">{{ post.title }}</a></td>
       </tr>
     {% endfor %}
   </table>
+  
+  <!-- 分页导航 -->
+  <div id="pagination" style="margin-top: 30px; text-align: center; display: none;">
+    <button id="prev-btn" onclick="changePage(-1)" style="padding: 6px 12px; margin: 0 5px; border: 1px solid #ddd; background: #fff; cursor: pointer; border-radius: 4px;">← 上一页</button>
+    <span id="page-info" style="margin: 0 10px; color: #666; font-size: 14px;"></span>
+    <button id="next-btn" onclick="changePage(1)" style="padding: 6px 12px; margin: 0 5px; border: 1px solid #ddd; background: #fff; cursor: pointer; border-radius: 4px;">下一页 →</button>
+  </div>
 </div>
+
+<script>
+(function() {
+  const rows = document.querySelectorAll('.post-row');
+  const itemsPerPage = 10;
+  const totalItems = rows.length;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  let currentPage = 1;
+  
+  if (totalPages > 1) {
+    document.getElementById('pagination').style.display = 'block';
+  }
+  
+  function showPage(page) {
+    currentPage = page;
+    
+    rows.forEach(row => {
+      const rowPage = parseInt(row.getAttribute('data-page'));
+      row.style.display = rowPage === page ? '' : 'none';
+    });
+    
+    document.getElementById('page-info').textContent = '第 ' + page + ' 页 / 共 ' + totalPages + ' 页';
+    document.getElementById('prev-btn').disabled = page === 1;
+    document.getElementById('next-btn').disabled = page === totalPages;
+    document.getElementById('prev-btn').style.opacity = page === 1 ? '0.5' : '1';
+    document.getElementById('next-btn').style.opacity = page === totalPages ? '0.5' : '1';
+  }
+  
+  window.changePage = function(direction) {
+    const newPage = currentPage + direction;
+    if (newPage >= 1 && newPage <= totalPages) {
+      showPage(newPage);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+  
+  // 初始化显示第一页
+  showPage(1);
+})();
+</script>
