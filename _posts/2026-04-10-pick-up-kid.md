@@ -10,6 +10,10 @@ tags: [日常, 家庭]
 
 ![接小孩放学](/assets/images/2026-04-10-pick-up-kid.jpg)
 
+![接小孩放学](/assets/images/2026-04-10-pick-up-kid-2.jpg)
+
+![接小孩放学](/assets/images/2026-04-10-pick-up-kid-3.jpg)
+
 ---
 
 *记录于 2026年4月10日*
